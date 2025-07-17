@@ -1,13 +1,23 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import userRoutes from './routes/userRoutes';
+import testDbRouter from './routes/test'; 
 
-import express, { Request, Response } from 'express';
-
+dotenv.config();
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello from Express + TypeScript!');
-});
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.use('/', testDbRouter);
+
+// Routes
+app.use('/api', userRoutes);
+
+// Start
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
