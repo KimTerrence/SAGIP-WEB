@@ -1,4 +1,8 @@
+'use client';
+
 import * as React from "react"
+import { LayoutDashboard, Bug, Users } from "lucide-react"
+import { useRouter } from "next/navigation";
 
 import {
   Sidebar,
@@ -18,25 +22,64 @@ import {
 // This is sample data.
 const data = {
   navMain: [
+   
     {
-      title: "Getting Started",
+      title: "Dashboard",
       url: "/login",
+      icon: <LayoutDashboard className="w-5 h-5" />,
+    },
+      {
+      title: "News",
+      url: "/login",
+      icon: <Bug className="w-5 h-5" />
+    },
+     {
+      title: "Pests",
+      url: "/login",
+      icon: <Bug className="w-5 h-5" />
+    },
+     {
+      title: "Logs",
+      url: "/login",
+      icon: <Users className="w-5 h-5" />
+    },
+     {
+      title: "Datasets",
+      url: "/login",
+      icon: <Users className="w-5 h-5" />
+    },
+       {
+      title: "Users",
+      url: "/login",
+      icon: <Users className="w-5 h-5" />
     },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+
+  const router = useRouter();
+
+  async function handleLogout() {
+    await fetch("/api/logout", {
+      method: "POST",
+    });
+
+    router.push("/"); // Redirect to login or home page
+  }
+
   return (
     <Sidebar {...props}>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Table of Contents</SidebarGroupLabel>
+          <SidebarGroupLabel>Contents</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {data.navMain.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url} className="font-medium">
+                      {item.icon}
                       {item.title}
                     </a>
                   </SidebarMenuButton>
@@ -47,7 +90,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarRail />
-      Logout
+      <button className="px-3 py-2 bg-red-600 m-10 rounded-sm text-white"onClick={handleLogout}>Logout</button>
     </Sidebar>
   )
 }
