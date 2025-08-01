@@ -65,7 +65,7 @@ export default function Pest() {
                   <p className="text-gray-600 text-sm">
                     {pest.description}
                   </p>
-                  <Badge variant="default">{pest.crop}</Badge>
+                  <Badge variant={pest.crop as "Palay" | "Corn" | "default" | "outline"}>{pest.crop}</Badge>
                 </div>
               ))}
             </div>
