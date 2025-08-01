@@ -32,7 +32,7 @@ export function LoginForm({
 
   if (data.success) {
     // Redirect or do something on success
-    window.location.href = '/dashboard';
+    window.location.href = '/admin';
   } else {
     alert('Invalid credentials');
   }
