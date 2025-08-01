@@ -3,13 +3,16 @@
 import * as React from "react"
 import { LayoutDashboard, Bug, Users } from "lucide-react"
 import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -70,6 +73,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   return (
     <Sidebar {...props}>
+      <SidebarHeader>
+   
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Contents</SidebarGroupLabel>
@@ -90,7 +96,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarRail />
-      <button className="px-3 py-2 bg-red-600 m-10 rounded-sm text-white"onClick={handleLogout}>Logout</button>
+      <SidebarFooter>
+       <Button variant="destructive" onClick={handleLogout}>Logout</Button>
+      </SidebarFooter>
     </Sidebar>
   )
 }
