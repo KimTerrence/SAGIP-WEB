@@ -15,7 +15,7 @@ const pestCards = [
   {
     name: "Rice Stem Borer",
     description: "Larvae bore into rice stems, cutting off nutrient flow and causing deadhearts.",
-    image: "/pest/palay/ricebug.jpg",
+    image: "/pest/palay/greenleafhopper.jpg",
     crop: "Corn",
   },
   {
@@ -27,7 +27,7 @@ const pestCards = [
   {
     name: "Rice Bug",
     description: "Feeds on developing grains, causing unfilled or discolored grains.",
-    image: "/pest/palay/ricebug.jpg",
+    image: "/pest/palay/whorlmaggot.jpg",
     crop: "default",
   },
   {
@@ -60,7 +60,7 @@ export default function Pest() {
                   key={index}
                   className="rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 bg-white border border-gray-200"
                 >
-                  <img src={pest.image} alt={pest.name} />
+                  <img src={pest.image} alt={pest.name} className="w-full"/>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{pest.name}</h3>
                   <p className="text-gray-600 text-sm">
                     {pest.description}
