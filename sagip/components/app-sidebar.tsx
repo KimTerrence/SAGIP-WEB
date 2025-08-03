@@ -28,7 +28,7 @@ const data = {
    
     {
       title: "Dashboard",
-      url: "/login",
+      url: "/admin",
       icon: <LayoutDashboard className="w-5 h-5" />,
     },
       {
@@ -38,7 +38,7 @@ const data = {
     },
      {
       title: "Pests",
-      url: "/login",
+      url: "/adminpest",
       icon: <Bug className="w-5 h-5" />
     },
      {
