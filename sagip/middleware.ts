@@ -9,9 +9,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
+  if (token && pathname === '/login') {
+    return NextResponse.redirect(new URL('/admin', request.url));
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/adminpest/:path*'],
+  matcher: ['/admin/:path*', '/adminpest/:path*', '/login'],
 };
