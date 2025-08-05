@@ -53,7 +53,7 @@ const data = {
     },
        {
       title: "Users",
-      url: "/login",
+      url: "/users",
       icon: <Users className="w-5 h-5" />
     },
   ],

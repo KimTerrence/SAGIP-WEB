@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
 
   const pathname = request.nextUrl.pathname;
 
-  if (!token && (pathname.startsWith('/admin') || pathname.startsWith('/adminpest'))) {
+  if (!token && (pathname.startsWith('/admin') || pathname.startsWith('/adminpest') || pathname.startsWith('/users'))) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
@@ -17,5 +17,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/adminpest/:path*', '/login'],
+  matcher: ['/admin/:path*', '/adminpest/:path*', '/login', '/users'],
 };
