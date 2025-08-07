@@ -23,7 +23,7 @@ export default function WelcomePage() {
             <h1 className="mt-6 text-6xl lg:text-8xl font-extrabold text-gray-800 leading-snug ">
              S A G I P
             </h1>
-            <p className='text-green-500 text-3xl lg:text-5xl font-bold'>Smart Agricultural Guidance in Indentifying Pest </p>
+            <p className='text-green-500 text-3xl lg:text-5xl font-bold'>Smart AI-Powered Guidance in Indentifying Pest </p>
 
             <p className="mt-4 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
               SAGIP is your intelligent farming companion — built to with real-time pest detection, smart monitoring, and offline support to protect your crops and boost productivity.
